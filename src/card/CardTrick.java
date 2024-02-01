@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package card;
 
 import java.util.Random;
@@ -11,10 +7,8 @@ import java.util.Scanner;
  * A class that fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
- * @author - Khushpreet Na 
- * Student Number - 991669200
+ * @author Your Name (Your Student Number)
  */
-
 public class CardTrick {
 
     private static final int HAND_SIZE = 7;
@@ -97,11 +91,31 @@ public class CardTrick {
         }
     }
 
+    /**
+     * Add a lucky card to the magic hand.
+     */
+    public void addLuckyCard() {
+        Card luckyCard = new Card();
+        luckyCard.setValue(7); // You can choose any value for the lucky card
+        luckyCard.setSuit("Hearts"); // You can choose any suit for the lucky card
+
+        // Replace the first card in the magic hand with the lucky card
+        magicHand[0] = luckyCard;
+
+        System.out.println("\nLucky Card added to the magic hand: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
+    }
+
     public static void main(String[] args) {
         // Create an instance of CardTrick
         CardTrick cardTrick = new CardTrick();
 
         // Display the hand of seven cards
+        cardTrick.displayMagicHand();
+
+        // Add a lucky card to the magic hand
+        cardTrick.addLuckyCard();
+
+        // Display the updated hand with the lucky card
         cardTrick.displayMagicHand();
 
         // Ask the user to pick a card and search the magic hand

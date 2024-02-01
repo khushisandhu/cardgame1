@@ -63,11 +63,45 @@ public class CardTrick {
         }
     }
 
+    /**
+     * Ask the user to pick a card and search the magic hand.
+     */
+    public void searchMagicHand() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nPick a card (enter value and suit):");
+        int userValue = scanner.nextInt();
+        String userSuit = scanner.next();
+
+        Card userCard = new Card();
+        userCard.setValue(userValue);
+        userCard.setSuit(userSuit);
+
+        // Search for the user's card in the magic hand
+        boolean found = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
+                found = true;
+                break;
+            }
+        }
+
+        // Report the result
+        if (found) {
+            System.out.println("Congratulations! Your card is in the magic hand.");
+        } else {
+            System.out.println("Sorry! Your card is not in the magic hand.");
+        }
+    }
+
     public static void main(String[] args) {
         // Create an instance of CardTrick
         CardTrick cardTrick = new CardTrick();
 
         // Display the hand of seven cards
         cardTrick.displayMagicHand();
+
+        // Ask the user to pick a card and search the magic hand
+        cardTrick.searchMagicHand();
     }
 }

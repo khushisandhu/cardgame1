@@ -38,6 +38,12 @@ public class CardTrick {
         }
     }
 
+    // Add this code after filling the magic hand with random cards
+       Card luckyCard = new Card();
+       luckyCard.setValue(<your-chosen-number>);
+       luckyCard.setSuit("<your-chosen-suit>");
+       magicHand[0] = luckyCard;
+
     /**
      * Generate a random card value (1-13).
      * @return Random card value.

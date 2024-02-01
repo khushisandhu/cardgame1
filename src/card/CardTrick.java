@@ -14,15 +14,17 @@ import java.util.Scanner;
  * @author - Khushpreet Na 
  * Student Number - 991669200
  */
+
 public class CardTrick {
-    
+
+    private static final int HAND_SIZE = 7;
     private Card[] magicHand;
 
     /**
      * Constructor for the CardTrick class.
      */
     public CardTrick() {
-        magicHand = new Card[7];
+        magicHand = new Card[HAND_SIZE];
         fillMagicHandWithRandomCards();
     }
 
@@ -37,12 +39,6 @@ public class CardTrick {
             magicHand[i] = c;
         }
     }
-
-    // Lucky cardS
-       Card luckyCard = new Card();
-       luckyCard.setValue(<your-chosen-number>);
-       luckyCard.setSuit("<your-chosen-suit>");
-       magicHand[0] = luckyCard;
 
     /**
      * Generate a random card value (1-13).
